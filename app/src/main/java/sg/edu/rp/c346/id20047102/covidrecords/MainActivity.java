@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         ArrayList<Covid> covidList = new ArrayList<Covid>();
-        ArrayAdapter<Covid> covidAdapter = new ArrayAdapter<Covid>(this, android.R.layout.simple_list_item_1, covidList);
+        CustomAdapter covidAdapter = new CustomAdapter(this, R.layout.row, covidList);
         lvCovidCases.setAdapter(covidAdapter);
 
         client.get("https://data.gov.sg/api/action/datastore_search?resource_id=9de30d8d-3c0d-48ab-8c1b-4a7dc03d687a&limit=5", new JsonHttpResponseHandler() {
